@@ -84,4 +84,4 @@ Figma：<https://www.figma.com/design/Zq9lIHuWPJveP3gP8HVzZw/%E7%94%BB%E9%9D%A2%
 
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/b26eea303ed2105632a37f0eb60dd6a5.png)](https://gyazo.com/b26eea303ed2105632a37f0eb60dd6a5)
+[![Image from Gyazo](https://i.gyazo.com/2aec9be7e5f2531e479ea832777ca6a9.png)](https://gyazo.com/2aec9be7e5f2531e479ea832777ca6a9)
