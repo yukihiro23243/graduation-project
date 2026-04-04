@@ -1,5 +1,5 @@
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/2aec9be7e5f2531e479ea832777ca6a9.png)](https://gyazo.com/2aec9be7e5f2531e479ea832777ca6a9)
+[![Image from Gyazo](https://i.gyazo.com/ddca31d46ce0ff976c1352cc78b42f97.png)](https://gyazo.com/ddca31d46ce0ff976c1352cc78b42f97)
 
 ### 本サービスの概要（700文字以内）
 サウナ好きがととのい体験・体感したこだわりを記録できるアプリケーションです。 行ったサウナ施設の情報や感想、満足度を記録できます。 自分だけのサウナ履歴コレクションとしても、他ユーザーとの情報共有にも使えます。
