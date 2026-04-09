@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="header-inner">
+    <h1 class="logo"><%= link_to "サウナきろく", root_path %></h1>
+
+    <div class="header-right">
+      <nav>
+        <%= link_to "投稿一覧", "" %>
+      </nav>
+      <nav>
+        <% if current_user %>
+          <%= link_to "いいね一覧", "", style: "margin-left: 10px;" %>
+        <% end %>
+      </nav>
+
+      <% if current_user %>
+        <nav>
+          <%= link_to "マイページ", "", class: "mypage-link" %>
+        </nav>
+        <%= button_to "ログアウト", "", method: :delete, class: "logout-button" %>
+      <% else %>
+        <%= link_to "ログイン", "", class: "login-link" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "signup-link" %>
+      <% end %>
+    </div>
+  </div>
+</header>
