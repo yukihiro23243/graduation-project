@@ -1,0 +1,6 @@
+<h1>マイページ</h1>
+
+<p>メールアドレス：<%= current_user.email %></p>
+<p>パスワード：<%= current_user.password %></p>
+
+<%= link_to "メールアドレス・パスワード変更", edit_user_registration_path %>

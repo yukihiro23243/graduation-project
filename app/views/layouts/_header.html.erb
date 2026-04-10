@@ -14,7 +14,7 @@
 
       <% if user_signed_in? %>
         <nav>
-          <%= link_to "マイページ", "", class: "mypage-link" %>
+          <%= link_to "マイページ", mypage_path, class: "mypage-link" %>
         </nav>
         <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
