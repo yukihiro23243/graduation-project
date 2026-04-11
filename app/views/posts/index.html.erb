@@ -9,5 +9,7 @@
     <% if post.image.attached? %>
       <%= image_tag post.image %>
     <% end %>
+
+    <%= link_to "詳細", post_path(post) %>
   </div>
 <% end %>
