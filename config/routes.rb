@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   get "dashboard", to: "dashboard#index"
   get "mypage", to: "mypages#show"
+
+  resources :posts
 end
