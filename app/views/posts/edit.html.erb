@@ -1,0 +1,20 @@
+<h1>記録編集</h1>
+
+<%= form_with model: @post do |f| %>
+  <p>サウナ名</p>
+  <%= f.text_field :title %>
+
+  <p>内容</p>
+  <%= f.text_area :content %>
+
+  <p>画像</p>
+
+  <% if @post.image.attached? %>
+    <p>現在の画像</p>
+    <p><%= image_tag @post.image %></p>
+  <% end %>
+
+  <p><%= f.file_field :image %></p>
+
+  <%= f.submit "更新する" %>
+<% end %>

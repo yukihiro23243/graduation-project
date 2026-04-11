@@ -4,3 +4,7 @@
 <% if @post.image.attached? %>
   <%= image_tag @post.image %>
 <% end %>
+
+<% if @post.user == current_user %>
+  <%= link_to "編集", edit_post_path(@post) %>
+<% end %>
