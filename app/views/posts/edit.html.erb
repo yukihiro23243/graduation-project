@@ -18,3 +18,5 @@
 
   <%= f.submit "更新する" %>
 <% end %>
+
+<%= button_to "記録を削除する", post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
