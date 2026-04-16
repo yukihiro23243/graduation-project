@@ -1,15 +1,22 @@
-<h1>記録一覧</h1>
+<h1 class="page-title">記録一覧</h1>
 
-<% @posts.each do |post| %>
-  <div>
-    <h3><%= post.title %></h3>
-    <p><%= post.content %></p>
-    <p>投稿者：<%= post.user.email %></p>
-    
-    <% if post.image.attached? %>
-      <%= image_tag post.image %>
-    <% end %>
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="post-card">
+      
+      <h3 class="post-title"><%= post.title %></h3>
 
-    <%= link_to "詳細", post_path(post) %>
-  </div>
-<% end %>
+      <% if post.image.attached? %>
+        <div class="post-image">
+          <%= image_tag post.image %>
+        </div>
+      <% end %>
+
+      <p class="post-content"><%= post.content %></p>
+
+      <p class="post-user">投稿者：<%= post.user.email %></p>
+
+      <%= link_to "詳細", post_path(post), class: "post-link" %>
+    </div>
+  <% end %>
+</div>

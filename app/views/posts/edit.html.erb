@@ -1,32 +1,61 @@
-<h1>記録編集</h1>
+<div class="form-card">
 
-<% if @post.errors.any? %>
-  <div style="color: red;">
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <h1 class="page-title">記録編集</h1>
 
-<%= form_with model: @post do |f| %>
-  <p>サウナ名</p>
-  <%= f.text_field :title %>
-
-  <p>内容</p>
-  <%= f.text_area :content %>
-
-  <p>画像</p>
-
-  <% if @post.image.attached? %>
-    <p>現在の画像</p>
-    <p><%= image_tag @post.image %></p>
+  <% if @post.errors.any? %>
+    <div class="error-box">
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <p><%= f.file_field :image %></p>
+  <%= form_with model: @post do |f| %>
 
-  <%= f.submit "更新する" %>
-<% end %>
+    <div class="field">
+      <div class="label-row">
+        <%= f.label :title, "サウナ名" %>
+      </div>
+      <%= f.text_field :title %>
+    </div>
 
-<%= button_to "記録を削除する", post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <div class="field">
+      <div class="label-row">
+        <%= f.label :content, "内容" %>
+      </div>
+      <%= f.text_area :content %>
+    </div>
+
+    <div class="field">
+      <div class="label-row">
+        <%= f.label :image, "画像" %>
+      </div>
+
+      <% if @post.image.attached? %>
+        <p class="hint">現在の画像</p>
+        <div class="preview-image">
+          <%= image_tag @post.image %>
+        </div>
+      <% end %>
+
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "更新する", class: "submit-btn" %>
+    </div>
+
+  <% end %>
+
+  <div class="danger-zone">
+    <%= button_to "記録を削除する",
+      post_path(@post),
+      method: :delete,
+      data: { turbo_confirm: "本当に削除しますか？" },
+      class: "delete-btn"
+    %>
+  </div>
+
+</div>

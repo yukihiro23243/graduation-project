@@ -1,10 +1,27 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
+<div class="post-show">
 
-<% if @post.image.attached? %>
-  <%= image_tag @post.image %>
-<% end %>
+  <h1 class="post-show-title"><%= @post.title %></h1>
 
-<% if @post.user == current_user %>
-  <%= link_to "編集", edit_post_path(@post) %>
-<% end %>
+  <% if @post.image.attached? %>
+    <div class="post-show-image">
+      <%= image_tag @post.image %>
+    </div>
+  <% end %>
+
+  <p class="post-show-content"><%= @post.content %></p>
+
+  <p class="post-show-user">
+    投稿者：<%= @post.user.email %>
+  </p>
+
+  <% if @post.user == current_user %>
+    <div class="post-show-actions">
+      <%= link_to "編集", edit_post_path(@post), class: "btn" %>
+    </div>
+  <% end %>
+
+  <div class="post-show-back">
+    <%= link_to "← 一覧に戻る", posts_path, class: "back-link" %>
+  </div>
+
+</div>
